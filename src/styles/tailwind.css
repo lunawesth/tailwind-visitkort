@@ -1,15 +1,34 @@
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=Italiana&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
-@plugin '@tailwindcss/forms';
 @import "tailwindcss-animated";
 @import "tailwindcss-intersect";
 
 @theme {
   /* Her tilføjes theme variable // tokens */
+  --color-secondary: #c2ada4;
+  --color-secondary-dark: #1e1513;
+
+  --animate-wiggle: wiggle 3s ease-in-out infinite;
+
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-2deg);
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+  }
+
+  /* Definer font families som tokens */
+  --font-italiana: "italiana", serif;
+  --font-noto: "Noto Sans", sans-serif;
 }
 
-@layer base {
+/* @layer base {
   *,
   ::after,
   ::before,
@@ -17,11 +36,9 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-}
+} */
 
-@layer components{
-
+@layer components {
 }
-@layer utilities{
-  
+@layer utilities {
 }

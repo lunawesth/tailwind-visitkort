@@ -1,5 +1,66 @@
 ---
+
 ---
-<div>
-Header - tilføj navigation mm.
-</div>
+
+<header
+  x-data="{ showmenu: false }"
+  class="bg-secondary-400 text-red-800 overflow-hidden md:mx-5 lg:mx-10"
+>
+  <div id="navbar" class="container p-4 flex flex-row justify-end">
+    <nav id="desktopmenu" class="hidden lg:block">
+      <ul class="flex flex-row gap-4">
+        <li class="">
+          <a href="#ommig">Om mig</a>
+        </li>
+        <li class="">
+          <a href="#minekompetencer">Mine kompetencer</a>
+        </li>
+        <li class="">
+          <a href="#kontakt">Kontakt</a>
+        </li>
+      </ul>
+    </nav>
+    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"
+      >Menu</button
+    >
+  </div>
+  <nav
+    id="mobilmenu"
+    class="flex flex-col content-center"
+    x-show="showmenu"
+    x-transition
+    x-on:click="showmenu = false"
+    x-on:click.outside="showmenu = false"
+  >
+    <ul class="border-t-2 border-b-2 border-red-800">
+      <li class="text-center py-2">
+        <a href="#ommig">Om mig</a>
+      </li>
+      <li class="text-center py-2">
+        <a href="#minekompetencer">Mine kompetencer</a>
+      </li>
+      <li class="text-center py-2">
+        <a href="#kontakt">Kontakt</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="text-red-800 mx-15 lg:mx-30">
+    <h1
+      class="text-[90px] leading-22 absolute pt-16 md:text-[120px] md:leading-27 lg:text-[160px] lg:leading-32 font-italiana"
+    >
+      LUNA TORP <br />WESTH
+    </h1>
+    <img
+      src="/src/assets/img/header-blomst.png"
+      alt="Tegnet blomst"
+      class="relative left-30 top-10 md:left-100 lg:left-150 lg:size-120 lg:top-40 animate-wiggle"
+    />
+    <h2
+      class="text-3xl leading-1.6 md:pr-60 lg:text-4xl lg:leading-12 lg:mr-40 font-noto"
+    >
+      Jeg ønsker at udfordre mig selv og blive bedre til at tage chancer i mine
+      designvalg, og derfor har jeg valgt Digital Design.
+    </h2>
+  </div>
+</header>
